@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="col-sm-8 offset-sm-2">
+      <h1>Restaurant Index</h1>
+      <h1><%= @restaurant.name %></h1>
+      <p>Category: <%= @restaurant.category %></p>
+      <p>Address: <%= @restaurant.address %></p>
+      <p>Phone: <%= @restaurant.phone_number %></p>
+      <p><strong>Reviews</strong></p>
+      <ul class="list-group">
+        <% @restaurant.reviews.each do |review| %>
+          <li class="list-group-item"><%= review.content %></li>
+        <% end %>
+      </ul>
+      <br>
+
+  <%= link_to "Edit restaurant", edit_restaurant_path, class: "btn btn-primary text-white" %>
+  <%= link_to "All restaurants", restaurants_path, class: "btn btn-primary text-white" %>
+  </div>
+</div>
